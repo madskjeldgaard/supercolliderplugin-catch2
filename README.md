@@ -2,7 +2,7 @@
 
 Author: Mads Kjeldgaard
 
-A simple plugin that comes with tests
+A simple plugin example with the Catch2 testing framework added as a submodule and setup properly in CMake
 
 ### Requirements
 
@@ -13,7 +13,7 @@ A simple plugin that comes with tests
 
 Clone the project:
 
-    git clone https://github.com/madskjeldgaard/pluginwithtests
+    git clone --recurse-submodules https://github.com/madskjeldgaard/pluginwithtests
     cd pluginwithtests
     mkdir build
     cd build
@@ -36,3 +36,12 @@ Use the command in `regenerate` to update CMakeLists.txt when you add or remove 
 project. You don't need to run it if you only change the contents of existing files. You may need to
 edit the command if you add, remove, or rename plugins, to match the new plugin paths. Run the
 script with `--help` to see all available options.
+
+### Testing
+
+From the root of the repository, run
+```bash
+./build/tests
+```
+
+This will run the tests defined in `test/main.cpp`
