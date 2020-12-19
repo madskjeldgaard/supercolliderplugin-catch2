@@ -63,21 +63,26 @@ endif()
 
 ####################################################################################################
 # Testing with Catch2
-# Add seperate tests executable for running catch2 tests
-add_executable(tests test/main.cpp)
+option(BUILD_WITH_TEST "Build tests binary using catch2" ON)
 
-# Add catch2 library
-add_subdirectory(Catch2)
-include_directories(test Catch2)
+if (BUILD_WITH_TEST)
 
-# Add plugins folder to search path of tests binary
-include_directories(test plugins)
+	# Add seperate tests executable for running catch2 tests
+	add_executable(plugintest test/main.cpp)
 
-# Add SuperCollider files to header search path for the tests binary
-include_directories(test ${SC_PATH}/include/plugin_interface)
-include_directories(test ${SC_PATH}/include/common)
-include_directories(test ${SC_PATH}/include/server)
+	# Add catch2 library
+	add_subdirectory(Catch2)
+	include_directories(test Catch2)
 
+	# Add plugins folder to search path of tests binary
+	include_directories(test plugins)
+
+	# Add SuperCollider files to header search path for the tests binary
+	include_directories(test ${SC_PATH}/include/plugin_interface)
+	include_directories(test ${SC_PATH}/include/common)
+	include_directories(test ${SC_PATH}/include/server)
+
+endif()
 ####################################################################################################
 # Begin target PluginWithTests
 
