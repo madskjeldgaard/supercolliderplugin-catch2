@@ -2,7 +2,9 @@
 
 Author: Mads Kjeldgaard
 
-A simple plugin example with the Catch2 testing framework added as a submodule and setup properly in CMake
+A simple plugin example with the [Catch2](https://github.com/catchorg/Catch2) testing framework added as a submodule and setup properly in CMake.
+
+It is setup so that the `plugins` folder is included in the header search path of the `test` folder so that including `plugins/CrazyPluginHeader.hpp` in your tests may be done using `#include "CrazyPluginHeader.hpp"`
 
 ### Requirements
 
