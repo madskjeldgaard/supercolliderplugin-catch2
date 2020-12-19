@@ -15,7 +15,7 @@ It is setup so that the `plugins` folder is included in the header search path o
 
 Clone the project:
 
-    git clone --recurse-submodules https://github.com/madskjeldgaard/pluginwithtests
+    git clone --recurse-submodules https://github.com/madskjeldgaard/supercolliderplugin-catch2 
     cd pluginwithtests
     mkdir build
     cd build
