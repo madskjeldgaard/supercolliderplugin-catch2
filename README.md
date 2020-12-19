@@ -6,6 +6,16 @@ A simple plugin example with the [Catch2](https://github.com/catchorg/Catch2) te
 
 It is setup so that the `plugins` folder is included in the header search path of the `test` folder so that including `plugins/CrazyPluginHeader.hpp` in your tests may be done using `#include "CrazyPluginHeader.hpp"`
 
+### Testing
+Testing is enabled by default (this can be disabled by setting the option `BUILD_WITH_TEST` to `OFF`). 
+This creates an executable in your builds directory called `plugintest` that may be run after compilation.
+
+From the root of the repository, run
+```bash
+./build/plugintest
+```
+
+This will run the tests defined in `test/main.cpp`
 ### Requirements
 
 - CMake >= 3.5
@@ -39,11 +49,3 @@ project. You don't need to run it if you only change the contents of existing fi
 edit the command if you add, remove, or rename plugins, to match the new plugin paths. Run the
 script with `--help` to see all available options.
 
-### Testing
-
-From the root of the repository, run
-```bash
-./build/tests
-```
-
-This will run the tests defined in `test/main.cpp`
